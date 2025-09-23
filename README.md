@@ -1,128 +1,56 @@
-## The OpenCog Project 👋
-[OpenCog aims to create AGI](https://wiki.opencog.org/w/The_Open_Cognition_Project)
-with a combination of exploration, engineering and basic science research.
-Side quests have included robotics systems ([Hanson Robotics](https://www.hansonrobotics.com)),
-financial systems (Aidiya),
-genomics (MOZI and [Rejuve.bio](https://www.rejuve.bio)),
-machine learning ([predicting risk from clinician notes](https://doi.org/10.1371/journal.pone.0085733)),
-natural language chatbots ([virtual dog playing fetch](https://www.youtube.com/watch?v=FEmpGRLwbqE)) and more.
-This project was pioneered by [Dr. Ben Goertzel](https://en.wikipedia.org/wiki/Ben_Goertzel).
+> # OpenCog Collection (OCC)
+> ### An Integrated Architecture for Cognitive Synergy
 
-## OpenCog Collection (OCC) - Integrated Cognitive Architecture
+**The OpenCog Collection (OCC) is a monorepo that integrates multiple OpenCog components and external tools into a unified cognitive architecture.** Our primary goal is to foster **cognitive synergy**, where the interaction of diverse AI components leads to emergent intelligence and capabilities beyond the sum of their individual parts.
 
-This monorepo integrates multiple OpenCog components and external tools into a unified cognitive system. The OCC provides a complete environment for cognitive computing research and AGI development.
+This repository provides a complete, FSF-endorsed, and reproducible environment for research and development in Artificial General Intelligence (AGI), cognitive computing, and hypergraph-based AI.
 
-### Core OpenCog Components
+---
 
-#### OpenCog AtomSpace
-The core of the system. As of 2025, it is active, stable and supported.
+## Key Features
 
-* [AtomSpace](https://github.com/opencog/atomspace) - Hypergraph database and query engine.
-* [Storage](https://github.com/opencog/atomspace-storage) - Base class for saving, loading, sending and receiving Atoms and AtomSpaces
-* [CogServer](https://github.com/opencog/cogserver) and [atomspace-cog](https://github.com/opencog/atomspace-cog) - Networking, json, websockets.
-* [atomspace-rocks](https://github.com/opencog/atomspace-rocks) - Disk I/O storage, based on RocksDB.
-* [Proxy Nodes](https://wiki.opencog.org/w/ProxyNode) - Managing Atoms flowing through large Atomspaces. 
-* [Sparse Vectors/Matrix](https://github.com/opencog/matrix) - Working with graphs as (embeddings in) sparse vectors.
-* [Link Grammar](https://github.com/opencog/link-grammar) - Maximal Planar Graph (MPG) parsing, natural lanuage parsing (NLP).
-* [Docker containers](https://github.com/opencog/docker) - System integration and demos.
-* [atomspace-pgres](https://github.com/opencog/atomspace-pgres) - Postgres StorageNode. Works, but old, deprecated.
+- **Unified Cognitive Architecture**: A coherent system that brings together core OpenCog components like the **AtomSpace** (a hypergraph database) with advanced AI tools.
+- **Cognitive Synergy by Design**: The architecture is explicitly designed to facilitate the interaction and collaboration of different AI paradigms, including symbolic reasoning, machine learning, and evolutionary algorithms.
+- **Reproducible Development Environment**: Utilizes **GNU Guix** and a devcontainer to provide a fully declarative and isolated development environment, ensuring that all developers have a consistent setup.
+- **Extensible and Modular**: The OCC is designed to be easily extended with new components and integrations, allowing researchers to experiment with different cognitive architectures.
+- **Focus on AGI Research**: The ultimate goal of the OCC is to provide a platform for building and experimenting with AGI systems.
 
-#### OpenCog Research
-Git repos in which active resarch is being carried out:
-* [Sensory](https://github.com/opencog/sensory) - Dataflow of graphlets to/from external world. Agents I/O system.
-* [Atomese-SIMD](https://github.com/opencog/atomese-simd) - Flowing data to GPU's and other SIMD (OpenCL/CUDA) hardware w/the sensory API.
-* [Learn](https://github.com/opencog/learn) - Symbolic learning ("mature", batch-based processing.)
-* [Agents](https://github.com/opencog/agents) - Refactoring learning for an interactive environment.
-* [Motor](https://github.com/opencog/motor) - Controlling the focus of sensory attention. Perception-action.
+---
 
-### External Package Integrations
+## Getting Started
 
-The OCC includes powerful external tools integrated as modular Guix packages for enhanced cognitive capabilities:
+We recommend using the provided devcontainer for the best experience. This will automatically set up a complete development environment with all the necessary dependencies.
 
-#### Gnucash (Cognitive Accounting)
-- **Purpose**: Double-entry accounting with cognitive attention and ECAN integration
-- **Features**: Financial transaction representation in AtomSpace, cognitive attention mechanisms
-- **Build**: `-DBUILD_GNUCASH=ON`
-- **Service**: Port 8080
+1.  **Clone the repository:**
 
-#### KoboldCpp (Story/World Modeling)  
-- **Purpose**: GGUF model inference for narrative reasoning and world simulation
-- **Features**: Local LLM inference, story generation from cognitive context, character modeling
-- **Build**: `-DBUILD_KOBOLDCPP=ON`
-- **Service**: Port 5001
+    ```bash
+    git clone --recurse-submodules https://github.com/Kaw-Aii/occ.git
+    ```
 
-#### Aphrodite Engine (LLM Inference)
-- **Purpose**: High-performance LLM inference over AtomSpace knowledge graphs
-- **Features**: GPU-accelerated inference, OpenAI-compatible API, batch processing
-- **Build**: `-DBUILD_APHRODITE=ON`
-- **Service**: Port 2242
+2.  **Open in a devcontainer-compatible IDE (like VS Code).**
 
-See [External Integration Documentation](docs/EXTERNAL_INTEGRATION.md) for detailed usage instructions.
+3.  **Start building and experimenting!**
 
-### OpenCog Fossils
-Older, abandoned and obsolete components and experiments. These were attempts to build subsystems 
-with specific goals and ideas in mind. As experiments, they provided validation for certain design
-ideas. They were educational and fun, but turned out to be unworkable. Thus, development has
-halted. These projects are no longer maintained. They do contain useful subsystems that could be
-salvaged for future use. This includes:
-* PLN, URE, Attention, Ghost, Relex, R2L, ROS, Hanson Robotics Eva/Sophia
-* MOSES (but not as-moses, see below).
-* Any repo that is marked "read-only" or "obsolete".
+For more detailed instructions, please see our [Getting Started Guide](docs/getting-started.md).
 
-### OpenCog Hyperon
-Being developed by [Singularity.net](https://singularitynet.io).
+---
 
-### OpenCog Incubator
-These are the immature, incomplete, promising projects that haven't taken off yet.
+## Documentation
 
-* [as-moses](https://github.com/opencog/as-moses) - Port of MOSES to the AtomSpace.
-* [SQL Bridge](https://github.com/opencog/atomspace-bridge) - Direct I/O between SQL and AtomSpace
-* [Prolog-on-Atomspace](https://github.com/opencog/atomspace/tree/master/opencog/persist/prolog) - proof-of-concept
-* [Chemistry](https://github.com/opencog/cheminformatics) - Molecular bonds, molecular structural formulas (proof-of-concpept.)
-* [agi-bio](https://github.com/opencog/agi-bio) - Genomics, proteomics system used by MOZI and rejuve.bio
-* [Vision](https://github.com/opencog/vision) - Extracting structure from images, video (proof-of-concept.)
-* [Hyperon-on-top-of-atomspace](https://github.com/opencog/atomspace-metta) - Hyperon backwards-compat layer (proof-of-concept.)
-* [SpaceTime](https://github.com/opencog/spacetime) - Octree spatial bounding boxes and time intervals in Atomese.
+- **[Architecture Overview](docs/architecture.md)**: A detailed look at the OCC architecture and its components.
+- **[Cognitive Synergy](docs/cognitive-synergy.md)**: An explanation of the principles of cognitive synergy and how they are applied in the OCC.
+- **[Contributing Guide](CONTRIBUTING.md)**: How to contribute to the OpenCog Collection.
 
-# HELP WANTED
-The above-mentioned commercial projects don't pay the bills. There are far more ideas
-and possibilities than there is time or money. If you're a software developer, bored
-and looking for something to do, there's a lot of great stuff here that is worthy of
-attention. If you are an academic, scientist or grad student, someone who wants to do
-cross-over Symbolic AI and Deep-Learning Neural Net research, and need a base toolset,
-this is the place. We will work with you to make sure this stuff fits your needs and
-does what you want it to do, the way you want it.
-Contact [Linas Vepstas](linasvepstas@gmail.com).
+---
 
-### Commercial support
-If you are a commercial business looking to use any of these components in your products,
-we can provide full-time support, if that's what you want. We'll custom-taylor components,
-systems, and API's to suit your needs. If you are an investor looking to build up a venture,
-well yes, that could happen too. Talk to us. Contact [Linas Vepstas](linasvepstas@gmail.com).
+## Community and Support
 
-## GNU Guix Shepherd DevContainer
+The OpenCog project is a community-driven effort. We welcome contributions from researchers, developers, and anyone interested in AGI.
 
-This repository includes a **GNU Guix Shepherd devcontainer** setup for reproducible development environments. The devcontainer automatically turns the OpenCog repo into Guix packages and provides a FSF-compliant, declarative development environment.
+- **Discussions:** [GitHub Discussions](https://github.com/opencog/occ/discussions)
+- **Mailing List:** [OpenCog Google Group](https://groups.google.com/g/opencog)
 
-### Usage Flow
+---
 
-1. **Clone the repo** with devcontainer setup
-2. **Open in VSCode** (or compatible IDE) and select "Open in Container"
-3. **Shepherd is ready** - run build/test services with `shepherd` and `herd` in the container
-4. **Guix package definition** is ready for local and CI builds
+*The OpenCog Collection is a continuation of the OpenCog project, pioneered by Dr. Ben Goertzel.*
 
-### CI/CD Integration
-
-Automate CI using GitHub Actions with the included Guix build workflow:
-```yaml
-- name: Build with Guix
-  run: guix build -f guix.scm
-```
-
-### Features
-
-- **Reproducible builds** with Guix package manager
-- **Service orchestration** with GNU Shepherd
-- **FSF-endorsed** development experience
-- **Full Scheme integration** for cognitive computing
-- **Declarative environment** configuration
