@@ -54,85 +54,85 @@
                "-DBUILD_ATOMSPACE_EXTENSIONS=OFF"
                "-DCMAKE_INSTALL_PREFIX=/gnu/store")
         #:phases
-        ,(modify-phases %standard-phases
-           (add-before 'configure 'check-dependencies
-             (lambda* (#:key inputs outputs #:allow-other-keys)
-               ;; Check that required subdirectories exist
-               (for-each (lambda (dir)
-                          (unless (file-exists? dir)
-                            (format #t "Warning: Directory ~a not found~%" dir)))
-                        '("cogutil" "atomspace" "cogserver" "matrix" "learn" "agents" "sensory"))
-               #t))
-           (add-before 'configure 'set-environment
-             (lambda* (#:key inputs outputs #:allow-other-keys)
-               ;; Set up environment for building
-               (when (assoc-ref inputs "boost")
-                 (setenv "BOOST_ROOT" (assoc-ref inputs "boost")))
-               (when (assoc-ref inputs "pkg-config")
-                 (setenv "PKG_CONFIG_PATH"
-                         (string-append (assoc-ref inputs "pkg-config") "/lib/pkgconfig:"
-                                      (or (getenv "PKG_CONFIG_PATH") ""))))
-               #t))
-           (replace 'configure
-             (lambda* (#:key configure-flags #:allow-other-keys)
-               ;; Only configure if we have the required directories
-               (if (and (file-exists? "cogutil")
-                       (file-exists? "atomspace"))
-                   (begin
-                     (mkdir-p "build")
-                     (chdir "build")
-                     (apply invoke "cmake" ".." configure-flags))
-                   (begin
-                     (format #t "Skipping CMake build - required directories not found~%")
-                     #t))))
-           (replace 'build
-             (lambda* (#:key #:allow-other-keys)
-               ;; Only build if we successfully configured
-               (if (file-exists? "Makefile")
-                   (invoke "make" "-j" (number->string (parallel-job-count)))
-                   (begin
-                     (format #t "Skipping make build - no Makefile found~%")
-                     #t))))
-           (replace 'install
-             (lambda* (#:key outputs #:allow-other-keys)
-               (let* ((out (assoc-ref outputs "out"))
-                      (bin (string-append out "/bin"))
-                      (lib (string-append out "/lib"))
-                      (share (string-append out "/share/opencog-collection")))
-                 (mkdir-p share)
-                 (mkdir-p bin)
-                 (mkdir-p lib)
-                 
-                 ;; Install CMake build if it exists
-                 (when (file-exists? "Makefile")
-                   (invoke "make" "install"))
-                 
-                 ;; Install Python components
-                 (chdir "..")  ; Go back to source directory
-                 (when (file-exists? "app.py")
-                   (install-file "app.py" share)
-                   (call-with-output-file (string-append bin "/opencog-demo")
-                     (lambda (port)
-                       (format port "#!/bin/sh~%exec python3 ~a/app.py \"$@\"~%"
-                               share)))
-                   (chmod (string-append bin "/opencog-demo") #o755))
-                 
-                 ;; Install Rust components if Cargo.toml exists
-                 (when (file-exists? "Cargo.toml")
-                   (setenv "CARGO_HOME" (string-append (getcwd) "/.cargo"))
-                   (invoke "cargo" "build" "--release")
-                   (when (file-exists? "target/release/hyperon")
-                     (install-file "target/release/hyperon" bin))
-                   (when (file-exists? "target/release/libhyperon.so")
-                     (install-file "target/release/libhyperon.so" lib)))
-                 
-                 ;; Install documentation and metadata
-                 (when (file-exists? "README.md")
-                   (install-file "README.md" share))
-                 (when (file-exists? "requirements.txt")
-                   (install-file "requirements.txt" share))
-                 
-                 #t))))))
+        (modify-phases %standard-phases
+          (add-before 'configure 'check-dependencies
+            (lambda* (#:key inputs outputs #:allow-other-keys)
+              ;; Check that required subdirectories exist
+              (for-each (lambda (dir)
+                         (unless (file-exists? dir)
+                           (format #t "Warning: Directory ~a not found~%" dir)))
+                       '("cogutil" "atomspace" "cogserver" "matrix" "learn" "agents" "sensory"))
+              #t))
+          (add-before 'configure 'set-environment
+            (lambda* (#:key inputs outputs #:allow-other-keys)
+              ;; Set up environment for building
+              (when (assoc-ref inputs "boost")
+                (setenv "BOOST_ROOT" (assoc-ref inputs "boost")))
+              (when (assoc-ref inputs "pkg-config")
+                (setenv "PKG_CONFIG_PATH"
+                        (string-append (assoc-ref inputs "pkg-config") "/lib/pkgconfig:"
+                                     (or (getenv "PKG_CONFIG_PATH") ""))))
+              #t))
+          (replace 'configure
+            (lambda* (#:key configure-flags #:allow-other-keys)
+              ;; Only configure if we have the required directories
+              (if (and (file-exists? "cogutil")
+                      (file-exists? "atomspace"))
+                  (begin
+                    (mkdir-p "build")
+                    (chdir "build")
+                    (apply invoke "cmake" ".." configure-flags))
+                  (begin
+                    (format #t "Skipping CMake build - required directories not found~%")
+                    #t))))
+          (replace 'build
+            (lambda* (#:key #:allow-other-keys)
+              ;; Only build if we successfully configured
+              (if (file-exists? "Makefile")
+                  (invoke "make" "-j" (number->string (parallel-job-count)))
+                  (begin
+                    (format #t "Skipping make build - no Makefile found~%")
+                    #t))))
+          (replace 'install
+            (lambda* (#:key outputs #:allow-other-keys)
+              (let* ((out (assoc-ref outputs "out"))
+                     (bin (string-append out "/bin"))
+                     (lib (string-append out "/lib"))
+                     (share (string-append out "/share/opencog-collection")))
+                (mkdir-p share)
+                (mkdir-p bin)
+                (mkdir-p lib)
+                
+                ;; Install CMake build if it exists
+                (when (file-exists? "Makefile")
+                  (invoke "make" "install"))
+                
+                ;; Install Python components
+                (chdir "..")  ; Go back to source directory
+                (when (file-exists? "app.py")
+                  (install-file "app.py" share)
+                  (call-with-output-file (string-append bin "/opencog-demo")
+                    (lambda (port)
+                      (format port "#!/bin/sh~%exec python3 ~a/app.py \"$@\"~%"
+                              share)))
+                  (chmod (string-append bin "/opencog-demo") #o755))
+                
+                ;; Install Rust components if Cargo.toml exists
+                (when (file-exists? "Cargo.toml")
+                  (setenv "CARGO_HOME" (string-append (getcwd) "/.cargo"))
+                  (invoke "cargo" "build" "--release")
+                  (when (file-exists? "target/release/hyperon")
+                    (install-file "target/release/hyperon" bin))
+                  (when (file-exists? "target/release/libhyperon.so")
+                    (install-file "target/release/libhyperon.so" lib)))
+                
+                ;; Install documentation and metadata
+                (when (file-exists? "README.md")
+                  (install-file "README.md" share))
+                (when (file-exists? "requirements.txt")
+                  (install-file "requirements.txt" share))
+                
+                #t)))))
     (native-inputs
      (list pkg-config
            cmake
