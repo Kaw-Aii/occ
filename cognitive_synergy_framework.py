@@ -252,6 +252,21 @@ class CognitiveSynergyEngine:
             self.synergy_metrics['process_efficiency'] = active_processes / total_processes
             self.synergy_metrics['attention_distribution'] = len(self.memory.get_high_attention_atoms())
             self.synergy_metrics['pattern_diversity'] = len(self.memory.pattern_cache)
+    
+    def get_synergy_metrics(self) -> Dict[str, float]:
+        """Get current synergy metrics."""
+        metrics = {
+            'process_efficiency': self.synergy_metrics.get('process_efficiency', 0.0),
+            'attention_distribution': self.synergy_metrics.get('attention_distribution', 0.0),
+            'pattern_diversity': self.synergy_metrics.get('pattern_diversity', 0.0),
+            'total_atoms': len(self.memory.atoms) if hasattr(self.memory.atoms, '__len__') else 0,
+            'active_processes': len([p for p in self.processes.values() if not p.is_stuck])
+        }
+        return metrics
+    
+    def get_memory(self):
+        """Get the hypergraph memory instance."""
+        return self.memory
 
 
 class AttentionAllocator:
