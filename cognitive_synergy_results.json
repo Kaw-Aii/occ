@@ -1,0 +1,29 @@
+{
+  "reasoning_results": {
+    "new_conclusions": [],
+    "total_facts": 3,
+    "reasoning_iterations": 1
+  },
+  "enhanced_results": {
+    "enhanced_accuracy": 0.8888888888888888,
+    "improvement": 0.0,
+    "ml_guidance": {
+      "feature_weights": {},
+      "class_priors": {},
+      "attention_features": []
+    }
+  },
+  "pattern_insights": {
+    "patterns": [],
+    "high_attention_atoms": [
+      "PredicateNode:feature_petal length (cm)_important",
+      "PredicateNode:feature_petal width (cm)_important"
+    ],
+    "synergy_metrics": {
+      "process_efficiency": 1.0,
+      "attention_distribution": 0,
+      "pattern_diversity": 0
+    }
+  },
+  "timestamp": "2025-10-10T00:59:37.285961"
+}

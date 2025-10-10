@@ -5,7 +5,8 @@ authors = ["Your Name <you@example.com>"]
 edition = "2018"
 
 [dependencies]
-# Add actual dependencies here if needed
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 
 [lib]
 name = "hyperon"
