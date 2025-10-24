@@ -30,7 +30,8 @@
              (gnu packages maths)
              (gnu packages cpp)
              (gnu packages check)
-             (gnu packages build-tools))
+             (gnu packages build-tools)
+             (gnu packages algebra))
 
 (define-public opencog-collection
   (package
@@ -136,7 +137,8 @@
     (native-inputs
      (list pkg-config
            cmake
-           rust))
+           rust
+           cxxtest))
     (inputs
      (list python
            python-numpy
@@ -144,7 +146,10 @@
            python-scikit-learn
            python-matplotlib
            guile-3.0
-           boost))
+           boost
+           openblas
+           lapack
+           gsl))
     (propagated-inputs
      (list python-numpy
            python-pandas

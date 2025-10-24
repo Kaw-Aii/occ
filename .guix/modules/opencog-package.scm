@@ -25,7 +25,8 @@
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages cpp)
-  #:use-module (gnu packages check))
+  #:use-module (gnu packages check)
+  #:use-module (gnu packages algebra))
 
 (define-public opencog-collection
   (package
@@ -88,7 +89,6 @@ exec ~a ~a/app.py \"$@\"~%"
      (list pkg-config
            cmake
            rust
-           `(,rust "cargo")
            cxxtest))
     (inputs
      (list python
@@ -98,7 +98,7 @@ exec ~a ~a/app.py \"$@\"~%"
            python-matplotlib
            guile-3.0
            boost
-           blas
+           openblas
            lapack
            gsl))
     (propagated-inputs
