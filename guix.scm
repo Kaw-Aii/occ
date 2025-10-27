@@ -31,7 +31,8 @@
              (gnu packages cpp)
              (gnu packages check)
              (gnu packages build-tools)
-             (gnu packages algebra))
+             (gnu packages algebra)
+             (gnu packages maths))
 
 (define-public opencog-collection
   (package
@@ -137,8 +138,7 @@
     (native-inputs
      (list pkg-config
            cmake
-           rust
-           cxxtest))
+           rust))
     (inputs
      (list python
            python-numpy
