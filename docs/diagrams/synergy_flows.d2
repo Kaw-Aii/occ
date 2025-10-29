@@ -1,0 +1,239 @@
+direction: right
+
+title: Cognitive Synergy Flow Architecture {
+  near: top-center
+  shape: text
+  style: {
+    font-size: 24
+    bold: true
+  }
+}
+
+# Main components
+orchestrator: Unified Cognitive Orchestrator {
+  shape: hexagon
+  style.fill: "#e1f5ff"
+  style.stroke: "#01579b"
+  style.stroke-width: 3
+  
+  attention: Attention Economy {
+    shape: circle
+    style.fill: "#bbdefb"
+  }
+  
+  bottleneck: Bottleneck Resolver {
+    shape: circle
+    style.fill: "#bbdefb"
+  }
+  
+  emergent: Emergent Detector {
+    shape: circle
+    style.fill: "#bbdefb"
+  }
+}
+
+knowledge: Hypergraph Knowledge Base {
+  shape: cylinder
+  style.fill: "#f3e5f5"
+  style.stroke: "#4a148c"
+  style.stroke-width: 2
+  
+  patterns: Pattern Store {
+    shape: stored_data
+  }
+  
+  attention_bank: Attention Bank {
+    shape: stored_data
+  }
+}
+
+# Cognitive processes
+processes: Cognitive Processes {
+  style.fill: "#e8f5e9"
+  style.stroke: "#1b5e20"
+  
+  reasoning: Reasoning {
+    shape: rectangle
+    icon: https://icons.terrastruct.com/essentials/087-brain.svg
+  }
+  
+  learning: Learning {
+    shape: rectangle
+    icon: https://icons.terrastruct.com/essentials/155-book.svg
+  }
+  
+  perception: Perception {
+    shape: rectangle
+    icon: https://icons.terrastruct.com/essentials/214-eye.svg
+  }
+  
+  mining: Pattern Mining {
+    shape: rectangle
+    icon: https://icons.terrastruct.com/essentials/119-search.svg
+  }
+}
+
+# External systems
+external: External Integration {
+  style.fill: "#fff3e0"
+  style.stroke: "#e65100"
+  
+  atomspace: AtomSpace {
+    shape: cylinder
+  }
+  
+  mcp: MCP Bridge {
+    shape: rectangle
+  }
+  
+  neon: Neon DB {
+    shape: cylinder
+  }
+}
+
+# Flow 1: Attention Allocation
+orchestrator.attention -> processes.reasoning: "Allocate 30%" {
+  style.stroke: "#1976d2"
+  style.stroke-width: 2
+}
+
+orchestrator.attention -> processes.learning: "Allocate 25%" {
+  style.stroke: "#1976d2"
+  style.stroke-width: 2
+}
+
+orchestrator.attention -> processes.perception: "Allocate 20%" {
+  style.stroke: "#1976d2"
+  style.stroke-width: 2
+}
+
+orchestrator.attention -> processes.mining: "Allocate 15%" {
+  style.stroke: "#1976d2"
+  style.stroke-width: 2
+}
+
+# Flow 2: Pattern Discovery
+processes.perception -> knowledge.patterns: "Visual Patterns" {
+  style.stroke: "#388e3c"
+  style.stroke-width: 2
+  style.animated: true
+}
+
+processes.reasoning -> knowledge.patterns: "Inference Patterns" {
+  style.stroke: "#388e3c"
+  style.stroke-width: 2
+  style.animated: true
+}
+
+processes.mining -> knowledge.patterns: "Mined Patterns" {
+  style.stroke: "#388e3c"
+  style.stroke-width: 2
+  style.animated: true
+}
+
+# Flow 3: Pattern Propagation
+knowledge.patterns -> processes.reasoning: "Shared Patterns" {
+  style.stroke: "#7b1fa2"
+  style.stroke-width: 2
+  style.stroke-dash: 3
+}
+
+knowledge.patterns -> processes.learning: "Shared Patterns" {
+  style.stroke: "#7b1fa2"
+  style.stroke-width: 2
+  style.stroke-dash: 3
+}
+
+knowledge.patterns -> processes.perception: "Shared Patterns" {
+  style.stroke: "#7b1fa2"
+  style.stroke-width: 2
+  style.stroke-dash: 3
+}
+
+# Flow 4: Bottleneck Detection & Resolution
+processes.reasoning -> orchestrator.bottleneck: "Activity Monitor" {
+  style.stroke: "#d32f2f"
+  style.stroke-width: 1
+  style.stroke-dash: 5
+}
+
+orchestrator.bottleneck -> orchestrator.attention: "Request Reallocation" {
+  style.stroke: "#d32f2f"
+  style.stroke-width: 2
+}
+
+# Flow 5: Emergent Behavior
+knowledge.patterns -> orchestrator.emergent: "Pattern Analysis" {
+  style.stroke: "#f57c00"
+  style.stroke-width: 2
+}
+
+orchestrator.emergent -> knowledge.attention_bank: "Boost Attention" {
+  style.stroke: "#f57c00"
+  style.stroke-width: 2
+}
+
+# Flow 6: External Integration
+processes.reasoning <-> external.atomspace: "Query/Store" {
+  style.stroke: "#455a64"
+  style.stroke-width: 1
+}
+
+processes.learning <-> external.mcp: "Tool Calls" {
+  style.stroke: "#455a64"
+  style.stroke-width: 1
+}
+
+external.mcp <-> external.neon: "Database Ops" {
+  style.stroke: "#455a64"
+  style.stroke-width: 1
+}
+
+# Synergy indicators
+synergy1: Cross-Module Pattern Sharing {
+  shape: cloud
+  style.fill: "#fff9c4"
+  style.stroke: "#f57f17"
+  near: knowledge
+}
+
+synergy2: Attention Economy {
+  shape: cloud
+  style.fill: "#fff9c4"
+  style.stroke: "#f57f17"
+  near: orchestrator.attention
+}
+
+synergy3: Emergent Intelligence {
+  shape: cloud
+  style.fill: "#fff9c4"
+  style.stroke: "#f57f17"
+  near: orchestrator.emergent
+}
+
+# Legend
+legend: Legend {
+  near: bottom-right
+  style.fill: "#fafafa"
+  style.stroke: "#9e9e9e"
+  
+  att: Attention Flow {
+    shape: rectangle
+    style.stroke: "#1976d2"
+  }
+  
+  pat: Pattern Discovery {
+    shape: rectangle
+    style.stroke: "#388e3c"
+  }
+  
+  prop: Pattern Propagation {
+    shape: rectangle
+    style.stroke: "#7b1fa2"
+  }
+  
+  bot: Bottleneck Flow {
+    shape: rectangle
+    style.stroke: "#d32f2f"
+  }
+}

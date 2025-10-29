@@ -1,0 +1,91 @@
+graph TB
+    subgraph "Unified Cognitive Orchestrator"
+        UCO[Unified Cognitive Orchestrator]
+        UCO --> AA[Attention Allocator]
+        UCO --> PP[Pattern Propagator]
+        UCO --> BD[Bottleneck Detector]
+        UCO --> EB[Emergent Behavior Detector]
+        UCO --> SM[Synergy Metrics Collector]
+    end
+    
+    subgraph "Hypergraph Knowledge Base"
+        HKB[Hypergraph Memory]
+        HKB --> PI[Pattern Index]
+        HKB --> AB[Attention Bank]
+        HKB --> PC[Pattern Cache]
+    end
+    
+    subgraph "Cognitive Processes"
+        RP[Reasoning Process]
+        LP[Learning Process]
+        PP_PROC[Perception Process]
+        MP[Mining Process]
+        IP[Inference Process]
+    end
+    
+    subgraph "External Integration"
+        MCP[MCP Bridge]
+        MCP --> NEON[Neon Database]
+        MCP --> HF[Hugging Face Models]
+        
+        AS[AtomSpace]
+        AS --> COGUTIL[CogUtil]
+        AS --> COGSERVER[CogServer]
+    end
+    
+    %% Orchestrator manages processes
+    UCO -.->|Allocates Attention| RP
+    UCO -.->|Allocates Attention| LP
+    UCO -.->|Allocates Attention| PP_PROC
+    UCO -.->|Allocates Attention| MP
+    UCO -.->|Allocates Attention| IP
+    
+    %% Processes interact with knowledge base
+    RP -->|Discovers Patterns| HKB
+    LP -->|Discovers Patterns| HKB
+    PP_PROC -->|Discovers Patterns| HKB
+    MP -->|Discovers Patterns| HKB
+    IP -->|Discovers Patterns| HKB
+    
+    HKB -->|Provides Patterns| RP
+    HKB -->|Provides Patterns| LP
+    HKB -->|Provides Patterns| PP_PROC
+    HKB -->|Provides Patterns| MP
+    HKB -->|Provides Patterns| IP
+    
+    %% External integration
+    RP <-->|Query/Store| AS
+    LP <-->|Query/Store| AS
+    MP <-->|Query/Store| AS
+    
+    RP <-->|Tool Calls| MCP
+    LP <-->|Tool Calls| MCP
+    
+    %% Synergy flows
+    PP -->|Cross-Module Sharing| RP
+    PP -->|Cross-Module Sharing| LP
+    PP -->|Cross-Module Sharing| PP_PROC
+    PP -->|Cross-Module Sharing| MP
+    PP -->|Cross-Module Sharing| IP
+    
+    %% Bottleneck resolution
+    BD -.->|Detects Issues| RP
+    BD -.->|Detects Issues| LP
+    BD -.->|Detects Issues| PP_PROC
+    
+    AA -.->|Reallocates Resources| BD
+    
+    %% Emergent behavior
+    EB -.->|Monitors Interactions| HKB
+    EB -.->|Tracks Synergy| SM
+    
+    %% Styling
+    classDef orchestrator fill:#e1f5ff,stroke:#01579b,stroke-width:3px
+    classDef knowledge fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef process fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    classDef external fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    class UCO,AA,PP,BD,EB,SM orchestrator
+    class HKB,PI,AB,PC knowledge
+    class RP,LP,PP_PROC,MP,IP process
+    class MCP,NEON,HF,AS,COGUTIL,COGSERVER external
