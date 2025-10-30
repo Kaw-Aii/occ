@@ -46,13 +46,13 @@ ADD_DEFINITIONS(-DPROJECT_SOURCE_DIR="${CMAKE_SOURCE_DIR}"
 	            -DPROJECT_BINARY_DIR="${CMAKE_BINARY_DIR}")
 
 # Add the 'cmake' dir to cmake's module search path.
-SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/")
+SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/")
 
 # Get cogutil version.
 # NOTE: This is the official semantic-version, as it is derived from
 # a version-control independent means of declaring versioning.
 #
-FILE(READ "${CMAKE_SOURCE_DIR}/opencog/util/cogutil.h" _CU_H_CONTENTS)
+FILE(READ "${CMAKE_CURRENT_SOURCE_DIR}/opencog/util/cogutil.h" _CU_H_CONTENTS)
 STRING(REGEX MATCH
 	"#define COGUTIL_VERSION_STRING \"([0-9]+[.0-9]+[.0-9]+)\""
 	_ "${_CU_H_CONTENTS}")
@@ -211,7 +211,8 @@ SET(HAVE_UTIL 1)
 
 ADD_SUBDIRECTORY(cmake)
 ADD_SUBDIRECTORY(etc)
-ADD_SUBDIRECTORY(lib)
+# lib subdirectory contains only spec/config files, no CMakeLists.txt
+# ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(opencog)
 
 IF (CXXTEST_FOUND)
