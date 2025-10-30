@@ -1,0 +1,645 @@
+{
+  "advanced_cognitive_synergy_demo": {
+    "name": "advanced_cognitive_synergy_demo",
+    "module_path": "advanced_cognitive_synergy_demo.py",
+    "class_name": "AdvancedCognitiveSynergySystem",
+    "version": "0.1.0",
+    "description": "Advanced Cognitive Synergy Demonstration for OpenCog Collection\n==============================================================\n\nThis comprehensive demonstration showcases the integration of all advanc",
+    "capabilities": {
+      "has_agent_interface": true,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": false,
+      "supports_neural_symbolic": true,
+      "supports_multi_agent": true,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": true,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "neural_symbolic_integration",
+      "datetime",
+      "statistics",
+      "meta_cognitive_reasoning",
+      "time",
+      "pandas",
+      "json",
+      "threading",
+      "cognitive_synergy_framework",
+      "multi_agent_collaboration"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:55.043998"
+  },
+  "attention_allocation": {
+    "name": "attention_allocation",
+    "module_path": "attention_allocation.py",
+    "class_name": "AttentionBank",
+    "version": "0.1.0",
+    "description": "Attention Allocation Mechanism (ECAN-Inspired)\n==============================================\n\nThis module implements an Economic Attention Network (ECAN) inspired attention\nallocation mechanism for t",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": false,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "logging",
+      "datetime",
+      "random",
+      "collections",
+      "math"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:55.051085"
+  },
+  "cognitive_llm_integration": {
+    "name": "cognitive_llm_integration",
+    "module_path": "cognitive_llm_integration.py",
+    "class_name": "CognitiveHypothesis",
+    "version": "0.1.0",
+    "description": "Cognitive LLM Integration - Neural Language Augmentation\n========================================================\n\nThis module integrates Large Language Models (LLMs) into the cognitive\nsynergy framew",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": false,
+      "supports_neural_symbolic": true,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "logging",
+      "openai",
+      "json"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.148532"
+  },
+  "cognitive_monitoring": {
+    "name": "cognitive_monitoring",
+    "module_path": "cognitive_monitoring.py",
+    "class_name": "Alert",
+    "version": "0.1.0",
+    "description": "Cognitive Monitoring and Observability for OpenCog Collection\n=============================================================\n\nThis module provides monitoring, observability, and analytics for the\ncogni",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": false,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": true,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "datetime",
+      "collections",
+      "json"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.154906"
+  },
+  "cognitive_orchestrator": {
+    "name": "cognitive_orchestrator",
+    "module_path": "cognitive_orchestrator.py",
+    "class_name": "CognitiveOrchestrator",
+    "version": "0.1.0",
+    "description": "Cognitive Orchestrator - Unified Coordination System\n====================================================\n\nThis module implements the central orchestration system that coordinates all\ncognitive compon",
+    "capabilities": {
+      "has_agent_interface": true,
+      "has_arena_interface": true,
+      "has_relation_interface": true,
+      "supports_hypergraph": false,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": true,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "deep_tree_echo_membranes",
+      "datetime",
+      "collections",
+      "json",
+      "threading",
+      "queue",
+      "self_awareness_aar"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.169547"
+  },
+  "cognitive_synergy_bridge": {
+    "name": "cognitive_synergy_bridge",
+    "module_path": "cognitive_synergy_bridge.py",
+    "class_name": "HybridCognitiveSynergy",
+    "version": "0.1.0",
+    "description": "Cognitive Synergy Bridge - Python-Rust FFI Integration\n======================================================\n\nThis module provides a Foreign Function Interface (FFI) bridge between\nthe Python and Rus",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": false,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "logging",
+      "pathlib",
+      "time",
+      "ctypes",
+      "json",
+      "cognitive_synergy_framework"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.171766"
+  },
+  "cognitive_synergy_framework": {
+    "name": "cognitive_synergy_framework",
+    "module_path": "cognitive_synergy_framework.py",
+    "class_name": "Atom",
+    "version": "0.1.0",
+    "description": "Cognitive Synergy Framework for OpenCog Collection\n==================================================\n\nThis module implements a cognitive synergy framework that facilitates\ninteraction and collaborati",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "datetime",
+      "collections",
+      "pandas",
+      "json",
+      "threading",
+      "abc",
+      "queue"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.174244"
+  },
+  "cognitive_synergy_metrics": {
+    "name": "cognitive_synergy_metrics",
+    "module_path": "cognitive_synergy_metrics.py",
+    "class_name": "CognitiveSynergyMetricsCollector",
+    "version": "0.1.0",
+    "description": "Cognitive Synergy Metrics - Measurement and Analysis\n===================================================\n\nThis module provides comprehensive metrics for measuring and analyzing\ncognitive synergy effec",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": false,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": true,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "datetime",
+      "collections",
+      "pandas",
+      "json"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.178826"
+  },
+  "cognitive_synergy_orchestrator": {
+    "name": "cognitive_synergy_orchestrator",
+    "module_path": "cognitive_synergy_orchestrator.py",
+    "class_name": "CognitiveSynergyOrchestrator",
+    "version": "0.1.0",
+    "description": "Cognitive Synergy Orchestrator for OpenCog Collection\n=====================================================\n\nThis module provides a unified orchestration layer for cognitive synergy,\ncoordinating inte",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": true,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "datetime",
+      "hypergraph_dynamics",
+      "collections",
+      "json",
+      "threading",
+      "cognitive_synergy_framework",
+      "queue",
+      "self_awareness_aar"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.187831"
+  },
+  "enhanced_cognitive_synergy_demo": {
+    "name": "enhanced_cognitive_synergy_demo",
+    "module_path": "enhanced_cognitive_synergy_demo.py",
+    "class_name": "",
+    "version": "0.1.0",
+    "description": "Enhanced Cognitive Synergy Demo\n================================\n\nDemonstrates the enhanced cognitive synergy capabilities including:\n- Python-Rust FFI bridge\n- LLM integration for cognitive augmentat",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": true,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": true,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "cognitive_synergy_metrics",
+      "logging",
+      "metta_integration",
+      "time",
+      "cognitive_synergy_bridge",
+      "cognitive_synergy_framework",
+      "cognitive_llm_integration"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.195782"
+  },
+  "hypergraph_dynamics": {
+    "name": "hypergraph_dynamics",
+    "module_path": "hypergraph_dynamics.py",
+    "class_name": "HypergraphDynamics",
+    "version": "0.1.0",
+    "description": "Hypergraph Dynamics Module for OpenCog Collection\n=================================================\n\nThis module implements hypergraph dynamics for cognitive synergy, providing\nmechanisms for pattern ",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "datetime",
+      "collections",
+      "json"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.197732"
+  },
+  "hypergraph_knowledge_bridge": {
+    "name": "hypergraph_knowledge_bridge",
+    "module_path": "hypergraph_knowledge_bridge.py",
+    "class_name": "HypergraphKnowledgeBridge",
+    "version": "0.1.0",
+    "description": "Hypergraph Knowledge Bridge - Universal Knowledge Translation Layer\n===================================================================\n\nThis module implements a universal knowledge translation layer ",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": true,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "datetime",
+      "hashlib",
+      "collections",
+      "json"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.205131"
+  },
+  "hypergraph_persistence": {
+    "name": "hypergraph_persistence",
+    "module_path": "hypergraph_persistence.py",
+    "class_name": "CognitiveSnapshot",
+    "version": "0.1.0",
+    "description": "Hypergraph Persistence Layer\n============================\n\nThis module provides persistent storage for hypergraph cognitive structures\nusing both Neon (PostgreSQL) and Supabase for distributed cogniti",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": true,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "logging",
+      "datetime",
+      "hashlib",
+      "psycopg2",
+      "supabase",
+      "json"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.210460"
+  },
+  "integrated_cognitive_synergy_demo": {
+    "name": "integrated_cognitive_synergy_demo",
+    "module_path": "integrated_cognitive_synergy_demo.py",
+    "class_name": "IntegratedCognitiveSystem",
+    "version": "0.1.0",
+    "description": "Integrated Cognitive Synergy Demonstration\n==========================================\n\nThis demonstration shows all cognitive synergy components working together:\n- Cognitive Orchestrator (unified coo",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "hypergraph_knowledge_bridge",
+      "datetime",
+      "json",
+      "cognitive_orchestrator",
+      "self_awareness_aar"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.216446"
+  },
+  "mcp_cognitive_bridge": {
+    "name": "mcp_cognitive_bridge",
+    "module_path": "mcp_cognitive_bridge.py",
+    "class_name": "MCPCognitiveBridge",
+    "version": "0.1.0",
+    "description": "MCP Cognitive Bridge\n===================\n\nThis module bridges Model Context Protocol (MCP) servers with the cognitive\narchitecture, enabling external tool integration for enhanced cognitive capabiliti",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": false,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": true,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "logging",
+      "datetime",
+      "enum",
+      "json",
+      "subprocess"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.220791"
+  },
+  "meta_cognitive_reasoning": {
+    "name": "meta_cognitive_reasoning",
+    "module_path": "meta_cognitive_reasoning.py",
+    "class_name": "CognitiveState",
+    "version": "0.1.0",
+    "description": "Meta-Cognitive Reasoning Module for OpenCog Collection\n=====================================================\n\nThis module implements meta-cognitive reasoning capabilities that enable\nthe system to rea",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": true,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "datetime",
+      "statistics",
+      "collections",
+      "pandas",
+      "json",
+      "threading",
+      "enum",
+      "abc",
+      "cognitive_synergy_framework",
+      "time",
+      "queue"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.224027"
+  },
+  "multi_agent_collaboration": {
+    "name": "multi_agent_collaboration",
+    "module_path": "multi_agent_collaboration.py",
+    "class_name": "AgentRole",
+    "version": "0.1.0",
+    "description": "Multi-Agent Cognitive Collaboration System for OpenCog Collection\n================================================================\n\nThis module implements advanced multi-agent cognitive collaboration ",
+    "capabilities": {
+      "has_agent_interface": true,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": true,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "cognitive_synergy_framework",
+      "uuid",
+      "datetime",
+      "asyncio",
+      "statistics",
+      "collections",
+      "pandas",
+      "json",
+      "threading",
+      "enum",
+      "abc",
+      "time",
+      "queue"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.228005"
+  },
+  "neural_symbolic_integration": {
+    "name": "neural_symbolic_integration",
+    "module_path": "neural_symbolic_integration.py",
+    "class_name": "DifferentiableSymbolicReasoner",
+    "version": "0.1.0",
+    "description": "Neural-Symbolic Integration Module for OpenCog Collection\n========================================================\n\nThis module implements advanced neural-symbolic integration capabilities,\nenabling s",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": true,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "re",
+      "datetime",
+      "torch",
+      "collections",
+      "pandas",
+      "json",
+      "threading",
+      "abc",
+      "cognitive_synergy_framework"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.230637"
+  },
+  "self_awareness_aar": {
+    "name": "self_awareness_aar",
+    "module_path": "self_awareness_aar.py",
+    "class_name": "AARCore",
+    "version": "0.1.0",
+    "description": "Self-Awareness Module with Agent-Arena-Relation (AAR) Core\n===========================================================\n\nThis module implements a self-awareness system for the OpenCog Collection\nbased ",
+    "capabilities": {
+      "has_agent_interface": true,
+      "has_arena_interface": true,
+      "has_relation_interface": true,
+      "supports_hypergraph": false,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "datetime",
+      "collections",
+      "json"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.232986"
+  },
+  "unified_cognitive_orchestrator": {
+    "name": "unified_cognitive_orchestrator",
+    "module_path": "unified_cognitive_orchestrator.py",
+    "class_name": "UnifiedCognitiveOrchestrator",
+    "version": "0.1.0",
+    "description": "Unified Cognitive Orchestrator for OpenCog Collection\n=====================================================\n\nThis module provides a master orchestration layer that coordinates all cognitive\nprocesses ",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": true,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": true,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "numpy",
+      "logging",
+      "datetime",
+      "collections",
+      "time",
+      "enum",
+      "threading",
+      "json",
+      "queue"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.239177"
+  },
+  "cognitive_discovery": {
+    "name": "cognitive_discovery",
+    "module_path": "cognitive_discovery.py",
+    "class_name": "CognitiveComponentDiscovery",
+    "version": "0.1.0",
+    "description": "Cognitive Component Discovery and Registration System\n======================================================\n\nAutomatically discovers, validates, and registers cognitive components\nin the OpenCog Coll",
+    "capabilities": {
+      "has_agent_interface": false,
+      "has_arena_interface": false,
+      "has_relation_interface": false,
+      "supports_hypergraph": false,
+      "supports_neural_symbolic": false,
+      "supports_multi_agent": false,
+      "supports_mcp": false,
+      "supports_persistence": false,
+      "supports_monitoring": false,
+      "custom_capabilities": []
+    },
+    "dependencies": [
+      "inspect",
+      "logging",
+      "datetime",
+      "pathlib",
+      "json",
+      "importlib"
+    ],
+    "interfaces": [],
+    "discovered_at": "2025-10-30T00:54:56.243488"
+  }
+}
