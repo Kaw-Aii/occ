@@ -54,7 +54,8 @@ jobs:
           # Try to find and copy derivation logs
           if [ -d /var/log/guix/drvs ]; then
             sudo find /var/log/guix/drvs -name "*.drv.gz" -type f \
-              -exec cp {} guix-logs/ \; 2>/dev/null || true
+              -exec bash -c 'cp "$1" "guix-logs/$(basename "$1")"' _ {} \; \
+              2>/dev/null || true
           fi
 
       - name: Upload Guix build logs
