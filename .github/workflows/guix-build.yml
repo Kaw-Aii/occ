@@ -32,10 +32,42 @@ jobs:
 #          guix pull --verbosity=1
 
       - name: Build with Guix
+        id: guix-build
         run: |
           # Use $(whoami) for consistent PATH construction
           export PATH="/var/guix/profiles/per-user/$(whoami)/current-guix/bin:$PATH"
           # Ensure guix daemon is accessible
           guix describe
-          # Build the package
-          guix build -f guix.scm --verbosity=1
+          # Build the package with detailed logging
+          guix build -f guix.scm --verbosity=3 2>&1 | tee guix-build.log
+        continue-on-error: true
+
+      - name: Capture Guix build logs
+        if: always()
+        run: |
+          # Create directory for logs
+          mkdir -p guix-logs
+          # Copy the build log
+          if [ -f guix-build.log ]; then
+            cp guix-build.log guix-logs/
+          fi
+          # Try to find and copy derivation logs
+          if [ -d /var/log/guix/drvs ]; then
+            sudo find /var/log/guix/drvs -name "*.drv.gz" -type f \
+              -exec bash -c 'cp "$1" "guix-logs/$(basename "$1")"' _ {} \; \
+              2>/dev/null || true
+          fi
+
+      - name: Upload Guix build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guix-build-logs
+          path: guix-logs/
+          retention-days: 7
+
+      - name: Fail if build failed
+        if: steps.guix-build.outcome == 'failure'
+        run: |
+          echo "Guix build failed. Check the uploaded artifacts for detailed logs."
+          exit 1
