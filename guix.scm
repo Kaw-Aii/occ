@@ -10,8 +10,6 @@
              (guix build-system cmake)
              (guix build-system gnu)
              (guix build-system trivial)
-             (guix build utils)
-             (guix build cmake-build-system)
              ((guix licenses) #:prefix license:)
              (gnu packages)
              (gnu packages python)
@@ -31,8 +29,7 @@
              (gnu packages cpp)
              (gnu packages check)
              (gnu packages build-tools)
-             (gnu packages algebra)
-             (gnu packages maths))
+             (gnu packages algebra))
 
 (define-public opencog-collection
   (package
