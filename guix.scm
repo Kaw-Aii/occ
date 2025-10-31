@@ -135,7 +135,8 @@
     (native-inputs
      (list pkg-config
            cmake
-           rust))
+           rust
+           cxxtest))
     (inputs
      (list python
            python-numpy
@@ -145,7 +146,6 @@
            guile-3.0
            boost
            openblas
-           lapack
            gsl))
     (propagated-inputs
      (list python-numpy
